@@ -1,0 +1,12 @@
+---
+- name: Deploy App
+  hosts: localhost
+  become: true
+  gather_facts: no
+
+  tasks:
+  - name: Install Docker
+    include: docker-install.yml
+
+  - name: Install App
+    include: app-install.yml 

@@ -2,7 +2,7 @@ import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 HOST_NAME = ''
-PORT_NUMBER = 53210
+PORT_NUMBER = 80
 
 
 class MyHandler(BaseHTTPRequestHandler):

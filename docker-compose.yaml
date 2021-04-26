@@ -1,0 +1,31 @@
+version: "3.2"
+services:
+  server:
+    container_name: app-server
+    build: server/
+#    command: python /var/app/code/main2.py
+    networks:
+      - "appnet"
+    ports:
+      - "80:80"
+    volumes:
+      - type: bind
+        source: ./server/code
+        target: /var/app/code
+    command: python3 /var/app/code/main2.py
+  client:
+    container_name: app-client
+    build: client/
+    networks:
+      - "appnet"
+#    command: python /var/app/code/client.py
+    volumes:
+      - type: bind
+        source: ./client/code
+        target: /var/app/code
+    command: python3 /var/app/code/client.py
+    depends_on:
+      - server
+networks:
+  appnet:
+    external: true
