@@ -1,9 +1,10 @@
 # simple_server
 
-App-client send "Ping" by HTTP get with parametr, app-server check request and answer "Pong". 
+App-client send "Ping" by HTTP get with parametr, app-server check request and answer "Pong".
 If request is not "Ping", server answer with "Please send ping."
 
 STEPS to start:
+
 1 ---Git_clone---
 sudo apt install git
 git clone https://github.com/mzoorg/simple_server
@@ -18,12 +19,16 @@ sudo apt install ansible
 ansible-playbook deploy_myapp.yml -bK
 
 For test:
+
 docker exec -it app-client bash
+
 1
 root@544495b10b10:/var/app# curl http://app-server/?ping
 -Pong
+
 2
 tcpdump -A -s 0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+
 Output will be like:
 
 15:26:09.385009 IP app-server.appnet.http > 544495b10b10.37684: Flags [FP.], seq 117:121, ack 146, win 508, options [nop,nop,TS val 968141732 ecr 1561737683], length 4: HTTP
