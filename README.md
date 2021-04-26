@@ -1,5 +1,5 @@
 # simple_server
-my simple server
+
 App-client send "Ping" by HTTP get with parametr, app-server check request and answer "Pong". 
 If request is not "Ping", server answer with "Please send ping."
 
