@@ -1,9 +1,0 @@
----
--  Name:Deploy simple server
-   hosts:all
-   become:yes
-
-   tasks:
-   - name: Install docker
-
-   - name: Deploy simple server
