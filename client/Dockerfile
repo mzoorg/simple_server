@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 WORKDIR /var/app
-COPY client.py ./
+#COPY client.py ./
 COPY requirements.txt ./
 RUN apt-get update
 RUN apt-get install -y software-properties-common

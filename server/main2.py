@@ -1,7 +1,7 @@
 import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-HOST_NAME = '127.0.0.1'
+HOST_NAME = ''
 PORT_NUMBER = 53210
 
 
