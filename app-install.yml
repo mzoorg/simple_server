@@ -1,9 +1,12 @@
 ---
-#  - name: Create user-defined network
+- name: Create network
+  community.docker.docker_network:
+    name: appnet
+
 - name: Create and start services
   community.docker.docker_compose:
     project_src: ./
-    register: output
+  register: output
 
 - ansible.builtin.debug:
     var: output.stdout_lines
