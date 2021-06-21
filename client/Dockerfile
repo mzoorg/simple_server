@@ -1,11 +1,7 @@
-FROM ubuntu:bionic
+FROM python:3.10.0b2-alpine3.13
 WORKDIR /var/app
 #COPY client.py ./
 COPY requirements.txt ./
-RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get update
-RUN apt-get install -y python3.8 python3-pip tcpdump curl
-RUN python3 -m pip install --no-cache-dir -r requirements.txt
+RUN apt-get update; \
+    python3 -m pip install --no-cache-dir -r requirements.txt
 #CMD [ "python3", "./client.py"]

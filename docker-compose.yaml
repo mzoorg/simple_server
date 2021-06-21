@@ -15,7 +15,7 @@ services:
     command: python3 /var/app/code/main2.py
   client:
     container_name: app-client
-    image: python:3.10.0b2-alpine3.13
+    build: client/
     networks:
       - "appnet"
 #    command: python /var/app/code/client.py
