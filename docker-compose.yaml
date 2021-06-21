@@ -2,7 +2,7 @@ version: "3.2"
 services:
   server:
     container_name: app-server
-    build: server/
+    image: python:3.10.0b2-alpine3.13
 #    command: python /var/app/code/main2.py
     networks:
       - "appnet"
@@ -15,7 +15,7 @@ services:
     command: python3 /var/app/code/main2.py
   client:
     container_name: app-client
-    build: client/
+    image: python:3.10.0b2-alpine3.13
     networks:
       - "appnet"
 #    command: python /var/app/code/client.py
